@@ -32,3 +32,14 @@
 На любом устройстве достаточно сказать агенту: **«Прочитай PROGRESS.md и продолжим»**.
 
 Официальная документация: [cursor.com/docs](https://cursor.com/docs)
+
+## Трек: Flutter / Dart
+
+Строгий трек от CS-фундамента до production Flutter middle находится в [`flutter-course/`](flutter-course/).
+
+- Прогресс: [`flutter-course/PROGRESS.md`](flutter-course/PROGRESS.md)
+- Дорожная карта: [`flutter-course/ROADMAP.md`](flutter-course/ROADMAP.md)
+- Текущий урок: [`flutter-course/lessons/02-01-var-final-const.md`](flutter-course/lessons/02-01-var-final-const.md)
+
+На любом ПК: `git pull` → открыть проект → сказать агенту:  
+**«Прочитай flutter-course/AGENTS.md и flutter-course/PROGRESS.md. Продолжим.»**

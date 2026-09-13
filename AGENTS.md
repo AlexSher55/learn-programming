@@ -26,3 +26,10 @@
 
 - Не превращай учебные файлы в огромные энциклопедии.
 - Не коммить изменения, пока пользователь явно не попросит.
+
+## Трек Flutter/Dart
+
+- Материалы: `flutter-course/`.
+- Для Flutter/Dart сначала читай `flutter-course/AGENTS.md`, затем `flutter-course/PROGRESS.md`.
+- Источник правды по Flutter/Dart: `flutter-course/PROGRESS.md`.
+- Не смешивай прогресс Cursor-трека и Flutter-трека.

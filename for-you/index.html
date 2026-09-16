@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f3c2d0" />
+  <title>Для Солнышка</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --rose: #e07a97;
+      --deep: #c45173;
+      --wine: #6e2740;
+      --ink: #4a2433;
+      --cream: #fffafb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      min-height: 100%;
+      background:
+        radial-gradient(900px 520px at 12% -8%, #ffe3ec 0%, transparent 58%),
+        radial-gradient(700px 480px at 100% 0%, #ffd2e1 0%, transparent 52%),
+        linear-gradient(180deg, #fff6f8 0%, #f6cfdc 100%);
+      color: var(--ink);
+      font-family: Manrope, sans-serif;
+    }
+
+    body {
+      min-height: 100dvh;
+      overflow-x: hidden;
+    }
+
+    .petals {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .petal {
+      position: absolute;
+      top: -50px;
+      width: 16px;
+      height: 22px;
+      background: radial-gradient(circle at 30% 25%, #fff5f8, #ef8aa6 62%, #d45d7e);
+      border-radius: 80% 0 70% 20%;
+      opacity: 0.7;
+      animation: fall linear infinite;
+      filter: drop-shadow(0 2px 2px rgba(160, 50, 80, 0.15));
+    }
+
+    @keyframes fall {
+      0% { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 0; }
+      12% { opacity: 0.8; }
+      100% { transform: translate3d(40px, 110vh, 0) rotate(380deg); opacity: 0.12; }
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: min(560px, 100%);
+      margin: 0 auto;
+      padding: max(20px, env(safe-area-inset-top)) 16px max(40px, env(safe-area-inset-bottom));
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      justify-content: safe center;
+    }
+
+    .card {
+      width: 100%;
+      background: linear-gradient(180deg, rgba(255,252,253,0.96), rgba(255,244,247,0.92));
+      border: 1px solid rgba(255,255,255,0.9);
+      border-radius: 30px;
+      box-shadow: 0 20px 50px rgba(139, 58, 86, 0.16);
+      padding: 30px 22px 26px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before,
+    .card::after {
+      content: "";
+      position: absolute;
+      width: 88px;
+      height: 88px;
+      background:
+        radial-gradient(circle at 30% 30%, #ffd0dc 0 8px, transparent 9px),
+        radial-gradient(circle at 62% 48%, #f4a3b8 0 11px, transparent 12px);
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    .card::before { top: -18px; left: -14px; transform: rotate(-18deg); }
+    .card::after { bottom: -22px; right: -16px; transform: rotate(150deg); }
+
+    .script {
+      font-family: "Great Vibes", cursive;
+      color: var(--deep);
+      line-height: 1.05;
+    }
+
+    h1.script { font-size: clamp(46px, 13vw, 68px); margin: 4px 0 6px; }
+    h2.script { font-size: clamp(34px, 10vw, 50px); margin-bottom: 10px; }
+
+    .lead {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 22px;
+      font-style: italic;
+      color: var(--wine);
+      margin-bottom: 16px;
+    }
+
+    .intro {
+      color: #5d3042;
+      line-height: 1.65;
+      margin-bottom: 24px;
+      font-size: 15.5px;
+    }
+
+    .bouquet {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 0;
+      height: 150px;
+      margin-bottom: 4px;
+    }
+
+    .bouquet svg { display: block; }
+
+    .progress {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .bud {
+      width: 14px;
+      height: 14px;
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
+      background: #f3cdd6;
+      transition: 0.35s ease;
+    }
+
+    .bud.on {
+      background: radial-gradient(circle at 30% 30%, #ffd0dc, #c45173);
+      box-shadow: 0 0 0 4px rgba(196, 81, 115, 0.14);
+    }
+
+    .question {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(24px, 6.4vw, 30px);
+      font-weight: 600;
+      margin-bottom: 18px;
+      line-height: 1.25;
+    }
+
+    .options { display: grid; gap: 10px; }
+
+    button {
+      font-family: Manrope, sans-serif;
+      cursor: pointer;
+      border: 0;
+    }
+
+    .opt {
+      width: 100%;
+      text-align: left;
+      background: #fff;
+      color: var(--ink);
+      border: 1px solid #f0d0da;
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-size: 15.5px;
+      line-height: 1.4;
+      transition: 0.2s ease;
+    }
+
+    .opt:hover:not(:disabled),
+    .opt:focus-visible:not(:disabled) {
+      border-color: var(--rose);
+      background: #fff5f8;
+      transform: translateY(-1px);
+    }
+
+    .opt.picked {
+      border-color: var(--rose);
+      background: #fff5f8;
+    }
+
+    .opt.chosen {
+      background: linear-gradient(180deg, #fde8ef, #f7c9d6);
+      border-color: var(--deep);
+      color: var(--wine);
+      font-weight: 600;
+      box-shadow: 0 0 0 3px rgba(196, 81, 115, 0.18);
+    }
+
+    .opt:disabled {
+      cursor: default;
+      opacity: 0.45;
+    }
+
+    .opt.chosen:disabled {
+      opacity: 1;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 210px;
+      background: linear-gradient(180deg, #e589a3, #c45173);
+      color: #fff;
+      border-radius: 999px;
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: 0 12px 24px rgba(196, 81, 115, 0.32);
+    }
+
+    .cta:hover { transform: translateY(-1px); }
+
+    .note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      background: rgba(255, 236, 242, 0.9);
+      border-radius: 16px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 20px;
+      font-style: italic;
+      color: var(--wine);
+    }
+
+    .letter {
+      text-align: left;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 20.5px;
+      line-height: 1.72;
+    }
+
+    .letter p { margin-bottom: 13px; }
+    .sign {
+      text-align: right;
+      font-family: "Great Vibes", cursive;
+      font-size: 38px;
+      color: var(--deep);
+      margin-top: 4px;
+    }
+
+    .hidden, [hidden] { display: none !important; }
+    .shake { animation: shake 0.42s ease; }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-6px); }
+      75% { transform: translateX(6px); }
+    }
+
+    .hint {
+      min-height: 22px;
+      margin-top: 12px;
+      color: var(--deep);
+      font-size: 14px;
+    }
+
+    .heart {
+      font-size: 36px;
+      filter: drop-shadow(0 6px 10px rgba(180, 60, 90, 0.2));
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    .heart-burst {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 30;
+      overflow: hidden;
+    }
+
+    .fly-heart {
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #e4587c;
+      filter: drop-shadow(0 6px 8px rgba(180, 50, 90, 0.22));
+      animation: heartFly ease-out forwards;
+      will-change: transform, opacity;
+    }
+
+    .fly-heart svg {
+      display: block;
+    }
+
+    @keyframes heartFly {
+      0% {
+        transform: translate(-50%, -50%) scale(0.25) rotate(var(--rot-start));
+        opacity: 0;
+      }
+      14% { opacity: 1; }
+      100% {
+        transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(var(--scale)) rotate(var(--rot-end));
+        opacity: 0;
+      }
+    }
+
+    .cta.pop {
+      animation: btnPop 0.45s ease;
+    }
+
+    @keyframes btnPop {
+      0% { transform: scale(1); }
+      40% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .petal, .heart { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="petals" id="petals"></div>
+  <div class="heart-burst" id="heart-burst" aria-hidden="true"></div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <radialGradient id="roseFill" cx="38%" cy="32%" r="70%">
+        <stop offset="0%" stop-color="#ffe1e9" />
+        <stop offset="38%" stop-color="#f4a0b6" />
+        <stop offset="100%" stop-color="#c2476c" />
+      </radialGradient>
+      <radialGradient id="roseCore" cx="45%" cy="40%" r="55%">
+        <stop offset="0%" stop-color="#ffd0dc" />
+        <stop offset="100%" stop-color="#a83358" />
+      </radialGradient>
+    </defs>
+  </svg>
+
+  <main class="wrap">
+    <section class="card" id="screen-start">
+      <div class="bouquet" aria-hidden="true">
+        <svg viewBox="0 0 110 160" width="92" height="134" style="transform: rotate(-16deg) translateY(10px)">
+          <path d="M55 96 C50 128 62 146 54 156" stroke="#3f6e3c" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+          <path d="M54 124 C34 114 24 128 32 140 C44 130 52 130 54 124Z" fill="#4f8448"/>
+          <g transform="translate(55 62)">
+            <circle cx="-9" cy="-9" r="16" fill="#c2476c"/>
+            <circle cx="11" cy="-11" r="15" fill="#d45d7e"/>
+            <circle cx="-14" cy="4" r="14" fill="#be3f64"/>
+            <circle cx="15" cy="5" r="14" fill="#e07a97"/>
+            <circle cx="0" cy="12" r="13" fill="#e589a3"/>
+            <circle cx="-5" cy="1" r="11" fill="#f0a3b8"/>
+            <circle cx="7" cy="2" r="10" fill="#f7c2d0"/>
+            <circle cx="1" cy="4" r="7" fill="#c2476c"/>
+            <circle cx="2" cy="5" r="3.4" fill="#7a2846"/>
+          </g>
+        </svg>
+        <svg viewBox="0 0 120 170" width="108" height="152">
+          <path d="M60 104 C56 138 66 156 60 168" stroke="#3f6e3c" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <path d="M59 132 C36 120 24 136 32 150 C46 138 56 138 59 132Z" fill="#4f8448"/>
+          <path d="M61 140 C84 126 98 142 90 158 C76 146 64 146 61 140Z" fill="#5b9552"/>
+          <g transform="translate(60 66)">
+            <circle cx="-11" cy="-12" r="19" fill="#b5365c"/>
+            <circle cx="13" cy="-13" r="18" fill="#d45d7e"/>
+            <circle cx="-16" cy="5" r="16" fill="#c2476c"/>
+            <circle cx="18" cy="6" r="16" fill="#e07a97"/>
+            <circle cx="1" cy="15" r="15" fill="#e589a3"/>
+            <circle cx="-6" cy="1" r="13" fill="#f0a3b8"/>
+            <circle cx="8" cy="2" r="12" fill="#f7c2d0"/>
+            <circle cx="1" cy="5" r="8" fill="#c2476c"/>
+            <circle cx="2" cy="6" r="4" fill="#7a2846"/>
+          </g>
+        </svg>
+        <svg viewBox="0 0 110 160" width="92" height="134" style="transform: rotate(16deg) translateY(10px)">
+          <path d="M55 96 C60 128 48 146 56 156" stroke="#3f6e3c" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+          <path d="M56 124 C76 114 86 128 78 140 C66 130 58 130 56 124Z" fill="#5b9552"/>
+          <g transform="translate(55 62)">
+            <circle cx="-9" cy="-9" r="16" fill="#be3f64"/>
+            <circle cx="11" cy="-11" r="15" fill="#e07a97"/>
+            <circle cx="-14" cy="4" r="14" fill="#d45d7e"/>
+            <circle cx="15" cy="5" r="14" fill="#f0a3b8"/>
+            <circle cx="0" cy="12" r="13" fill="#e589a3"/>
+            <circle cx="-5" cy="1" r="11" fill="#f7c2d0"/>
+            <circle cx="7" cy="2" r="10" fill="#e07a97"/>
+            <circle cx="1" cy="4" r="7" fill="#c2476c"/>
+            <circle cx="2" cy="5" r="3.4" fill="#7a2846"/>
+          </g>
+        </svg>
+      </div>
+      <h1 class="script">Для Солнышка</h1>
+      <p class="lead">Не просто тест.<br>Моё извинение в розах.</p>
+      <p class="intro">Вчера я психовал не с чего и испортил вечер. Не словами — поведением. Сегодня хочу сказать иначе: тихо, честно и только тебе.</p>
+      <button class="cta" id="start-btn">Открыть</button>
+    </section>
+
+    <section class="card hidden" id="screen-quiz" hidden>
+      <div class="progress" id="progress"></div>
+      <h2 class="question" id="question"></h2>
+      <div class="options" id="options"></div>
+      <p class="hint" id="hint"></p>
+      <div class="note hidden" id="note"></div>
+      <div style="margin-top: 18px;">
+        <button class="cta hidden" id="next-btn">Дальше</button>
+      </div>
+    </section>
+
+    <section class="card hidden" id="screen-end" hidden>
+      <p class="heart" aria-hidden="true">🌹</p>
+      <h2 class="script">Моё Солнышко</h2>
+      <div class="letter">
+        <p>Прости меня.</p>
+        <p>Вчера я сорвался без причины. Не потому что ты сделала что-то плохое. А потому что не удержал себя и вылил это на самого дорогого человека. Ты не заслужила ни этого вечера, ни этого срыва. Ни капли.</p>
+        <p>Мне жаль не «вообще». Мне жаль, что вместо тепла ты получила моё поведение. Что я сделал больно там, где должен был беречь.</p>
+        <p>Несмотря ни на что, ты — моя самая любимая девочка. Моё Солнышко. Не когда удобно. Не если настроение хорошее. Всегда. Даже в те дни, когда я сам себе мешаю быть рядом так, как ты достойна.</p>
+        <p>Я тебя очень люблю. Хочу, чтобы ты это чувствовала не в оправданиях, а в том, как я к тебе отношусь.</p>
+        <p class="sign">Твой Котенок</p>
+      </div>
+      <button class="cta" id="hug-btn" style="margin-top: 18px;">Обнимаю тебя</button>
+      <p class="note hidden" id="hug-note">Спасибо, что ты есть, Солнышко. Ты — самое нежное и самое любимое, что у меня есть.</p>
+    </section>
+  </main>
+
+  <script>
+    const questions = [
+      {
+        q: "Кто вчера испортил вечер?",
+        options: [
+          { t: "Наверное, я чем-то виновата", ok: false, hint: "Нет, Солнышко. Ты ни в чём не виновата." },
+          { t: "Ты. И тебе очень жаль", ok: true, note: "Да. Это был я. И мне правда очень жаль." },
+          { t: "Просто неудачный день, никто не виноват", ok: false, hint: "День тут ни при чём. Виноват я — своим срывом." }
+        ]
+      },
+      {
+        q: "Из-за чего я психовал?",
+        options: [
+          { t: "Из-за тебя", ok: false, hint: "Нет. Ты была ни при чём." },
+          { t: "Из-за ерунды. Без причины", ok: true, note: "Именно так. Я сорвался не с чего — и это было нечестно по отношению к тебе." },
+          { t: "Потому что у тебя было плохое настроение", ok: false, hint: "Это было моё настроение. Не твоё." }
+        ]
+      },
+      {
+        q: "Заслужила ли ты вчерашний срыв?",
+        options: [
+          { t: "Наверное, да", ok: false, hint: "Нет, Солнышко. Ты не заслужила, чтобы на тебя срывались." },
+          { t: "Нет. Я не заслужила этого", ok: true, note: "Ты заслужила мягкость. Спокойствие. Чтобы тебя берегли." },
+          { t: "Не знаю, бывает", ok: false, hint: "Ты это знаешь. Ты этого не заслужила." }
+        ]
+      },
+      {
+        q: "Кто моя самая любимая девочка?",
+        options: [
+          { t: "Зависит от дня", ok: false, hint: "Никогда. Ни от дня, ни от настроения." },
+          { t: "Я. Только я", ok: true, note: "Только ты, Солнышко. Самая любимая. Единственная." },
+          { t: "Сейчас не скажешь, потому что злился", ok: false, hint: "Даже когда я веду себя плохо — это всё равно ты." }
+        ]
+      },
+      {
+        q: "Меняет ли вчерашнее то, как сильно я тебя люблю?",
+        options: [
+          { t: "Наверное, да", ok: false, hint: "Нет. Любовь к тебе не стала меньше ни на секунду." },
+          { t: "Ни на грамм. Я всё так же очень тебя люблю", ok: true, note: "Несмотря ни на что. Ты — моё Солнышко, и я тебя очень люблю." },
+          { t: "Нужно время, чтобы понять", ok: false, hint: "Мне не нужно время, чтобы это понять. Я люблю тебя." }
+        ]
+      }
+    ];
+
+    const petals = document.getElementById("petals");
+    for (let i = 0; i < 24; i++) {
+      const el = document.createElement("i");
+      el.className = "petal";
+      el.style.left = Math.random() * 100 + "%";
+      el.style.animationDuration = 7 + Math.random() * 9 + "s";
+      el.style.animationDelay = -Math.random() * 10 + "s";
+      el.style.width = 12 + Math.random() * 10 + "px";
+      el.style.height = 16 + Math.random() * 12 + "px";
+      petals.appendChild(el);
+    }
+
+    const startScreen = document.getElementById("screen-start");
+    const quizScreen = document.getElementById("screen-quiz");
+    const endScreen = document.getElementById("screen-end");
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const hintEl = document.getElementById("hint");
+    const noteEl = document.getElementById("note");
+    const nextBtn = document.getElementById("next-btn");
+    const progressEl = document.getElementById("progress");
+
+    let step = 0;
+    let answered = false;
+
+    function renderProgress() {
+      progressEl.innerHTML = questions.map((_, i) =>
+        `<span class="bud${i <= step ? " on" : ""}"></span>`
+      ).join("");
+    }
+
+    function renderQuestion() {
+      const item = questions[step];
+      answered = false;
+      questionEl.textContent = item.q;
+      hintEl.textContent = "";
+      noteEl.classList.add("hidden");
+      nextBtn.classList.add("hidden");
+      optionsEl.innerHTML = "";
+      renderProgress();
+
+      item.options.forEach((opt) => {
+        const btn = document.createElement("button");
+        btn.className = "opt";
+        btn.type = "button";
+        btn.textContent = opt.t;
+        btn.onclick = () => choose(opt, btn);
+        optionsEl.appendChild(btn);
+      });
+    }
+
+    function choose(opt, btn) {
+      if (answered) return;
+
+      if (!opt.ok) {
+        [...optionsEl.children].forEach((b) => b.classList.remove("picked"));
+        btn.classList.add("shake", "picked");
+        hintEl.textContent = opt.hint;
+        setTimeout(() => btn.classList.remove("shake"), 420);
+        return;
+      }
+
+      answered = true;
+      [...optionsEl.children].forEach((b) => {
+        b.disabled = true;
+        b.classList.remove("picked");
+      });
+      btn.classList.add("chosen");
+      hintEl.textContent = "";
+      noteEl.textContent = opt.note;
+      noteEl.classList.remove("hidden");
+      nextBtn.classList.remove("hidden");
+    }
+
+    function showScreen(el) {
+      [startScreen, quizScreen, endScreen].forEach((screen) => {
+        const on = screen === el;
+        screen.classList.toggle("hidden", !on);
+        screen.toggleAttribute("hidden", !on);
+      });
+    }
+
+    document.getElementById("start-btn").onclick = () => {
+      showScreen(quizScreen);
+      renderQuestion();
+    };
+
+    nextBtn.onclick = () => {
+      step += 1;
+      if (step >= questions.length) {
+        showScreen(endScreen);
+        return;
+      }
+      renderQuestion();
+    };
+
+    document.getElementById("hug-btn").onclick = (event) => {
+      const btn = document.getElementById("hug-btn");
+      document.getElementById("hug-note").classList.remove("hidden");
+      btn.textContent = "Я тебя очень люблю";
+      burstHearts(event.currentTarget);
+    };
+
+    function burstHearts(fromEl) {
+      const layer = document.getElementById("heart-burst");
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const rect = fromEl.getBoundingClientRect();
+      const x = rect.left + rect.width / 2;
+      const y = rect.top + rect.height / 2;
+      const count = reduce ? 4 : 18;
+      const colors = ["#e4587c", "#d6456c", "#f08aa6", "#c2476c", "#ff6b8a"];
+
+      fromEl.classList.remove("pop");
+      void fromEl.offsetWidth;
+      fromEl.classList.add("pop");
+
+      for (let i = 0; i < count; i++) {
+        const el = document.createElement("span");
+        const size = 18 + Math.random() * 28;
+        const dx = (Math.random() - 0.5) * 260;
+        const dy = -70 - Math.random() * 220;
+        el.className = "fly-heart";
+        el.style.left = x + "px";
+        el.style.top = y + "px";
+        el.style.width = size + "px";
+        el.style.setProperty("--dx", dx + "px");
+        el.style.setProperty("--dy", dy + "px");
+        el.style.setProperty("--scale", (0.85 + Math.random() * 0.7).toFixed(2));
+        el.style.setProperty("--rot-start", (Math.random() * 40 - 20) + "deg");
+        el.style.setProperty("--rot-end", (Math.random() * 80 - 40) + "deg");
+        el.style.color = colors[i % colors.length];
+        el.style.animationDuration = (reduce ? 0.8 : 1.15 + Math.random() * 0.7) + "s";
+        el.style.animationDelay = (Math.random() * 0.12) + "s";
+        el.innerHTML = '<svg viewBox="0 0 24 22" width="100%" height="100%"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>';
+        layer.appendChild(el);
+        el.addEventListener("animationend", () => el.remove());
+      }
+    }
+  </script>
+</body>
+</html>

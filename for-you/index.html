@@ -7,7 +7,7 @@
   <title>Для Солнышка</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Marck+Script&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --rose: #e07a97;
@@ -102,25 +102,28 @@
     .card::after { bottom: -22px; right: -16px; transform: rotate(150deg); }
 
     .script {
-      font-family: "Great Vibes", cursive;
+      font-family: "Marck Script", cursive;
       color: var(--deep);
-      line-height: 1.05;
+      line-height: 1.15;
+      font-weight: 400;
     }
 
-    h1.script { font-size: clamp(46px, 13vw, 68px); margin: 4px 0 6px; }
-    h2.script { font-size: clamp(34px, 10vw, 50px); margin-bottom: 10px; }
+    h1.script { font-size: clamp(42px, 12vw, 58px); margin: 4px 0 6px; }
+    h2.script { font-size: clamp(34px, 9vw, 46px); margin-bottom: 12px; }
 
     .lead {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 22px;
+      font-family: Lora, Georgia, serif;
+      font-size: 18px;
       font-style: italic;
+      font-weight: 400;
+      line-height: 1.5;
       color: var(--wine);
       margin-bottom: 16px;
     }
 
     .intro {
       color: #5d3042;
-      line-height: 1.65;
+      line-height: 1.7;
       margin-bottom: 24px;
       font-size: 15.5px;
     }
@@ -158,11 +161,11 @@
     }
 
     .question {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(24px, 6.4vw, 30px);
+      font-family: Lora, Georgia, serif;
+      font-size: clamp(22px, 5.8vw, 26px);
       font-weight: 600;
       margin-bottom: 18px;
-      line-height: 1.25;
+      line-height: 1.35;
     }
 
     .options { display: grid; gap: 10px; }
@@ -236,26 +239,35 @@
       padding: 14px 16px;
       background: rgba(255, 236, 242, 0.9);
       border-radius: 16px;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 20px;
+      font-family: Lora, Georgia, serif;
+      font-size: 17px;
       font-style: italic;
+      font-weight: 400;
+      line-height: 1.55;
       color: var(--wine);
     }
 
     .letter {
       text-align: left;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 20.5px;
-      line-height: 1.72;
+      font-family: Lora, Georgia, serif;
+      font-size: clamp(16.5px, 4.3vw, 18px);
+      font-weight: 400;
+      line-height: 1.8;
+      letter-spacing: 0.01em;
+      color: #3a1c29;
+      text-wrap: pretty;
     }
 
-    .letter p { margin-bottom: 13px; }
+    .letter p { margin-bottom: 16px; }
     .sign {
       text-align: right;
-      font-family: "Great Vibes", cursive;
-      font-size: 38px;
+      font-family: "Marck Script", cursive;
+      font-size: clamp(30px, 8vw, 36px);
+      line-height: 1.3;
+      letter-spacing: 0.02em;
       color: var(--deep);
-      margin-top: 4px;
+      margin-top: 6px;
+      margin-bottom: 0;
     }
 
     .hidden, [hidden] { display: none !important; }

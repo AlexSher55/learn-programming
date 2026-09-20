@@ -1,6 +1,6 @@
 # Прогресс — Dart / Flutter
 
-Этот файл — главный сейв учебного трека. На любом устройстве: `git pull` → открыть проект → попросить агента прочитать `flutter-course/PROGRESS.md` и продолжить.
+Этот файл — главный сейв учебного трека. На любом устройстве: `git pull` → открыть проект → попросить агента прочитать `flutter-course/AGENTS.md` и `flutter-course/PROGRESS.md` и продолжить.
 
 ## Цель
 
@@ -14,15 +14,23 @@
 - Режим: жёсткий, без поблажек.
 - График: обычно 2–4 часа, нерегулярно, параллельно с работой 5/2.
 
+## Формат урока (с 2026-09-20)
+
+Теория → практика в `practice/` → проверка агентом → контроль в чате → обновление этого файла.
+
+У текущего урока три флажка: **теория** / **практика** / **контроль**.
+
 ## Сейчас
 
 - **Раздел:** 2 — Dart Core
 - **Тема:** 2.3 — функции: параметры, named/optional/required, `=>`
-- **Статус:** теория расширена «с нуля»; контроль №6 ещё не отвечен
+- **Теория:** прочитана (файл готов; пользователь может перечитать)
+- **Практика:** не сдана → `practice/02-03/`
+- **Контроль №6:** не отвечен
 - **Режим:** 🔴 AI forbidden
-- **Следующий шаг:** прочитать полный `lessons/02-03-functions.md`, затем ответить на контроль №6
-- **Обновлено:** 2026-09-13
-- **Заметка по стилю:** теория далее — обширная, для новичка Dart/Flutter; контроль только по материалу урока
+- **Следующий шаг:** сделать практику `practice/02-03/task_01.dart` … `task_03.dart`, написать «проверь практику», затем контроль №6
+- **Обновлено:** 2026-09-20
+- **Заметка:** учебник Раздела 2 (02-01…02-12) полностью в репозитории; разделы 3–15 — каркас в `lessons/README.md`
 
 ## Уже закрыто на 100%
 
@@ -83,7 +91,7 @@
 
 Конспект: `lessons/02-01-var-final-const.md` (расширен после сдачи).
 
-Контроль №4 сдан со второй попытки.
+Контроль №4 сдан со второй попытки. Практика: `practice/02-01/` — **по желанию** (закрепление).
 
 Закрыто:
 - `var` фиксирует тип выводом и разрешает переприсваивание внутри этого типа;
@@ -98,7 +106,7 @@
 
 Конспект: `lessons/02-02-types.md` (расширен после сдачи).
 
-Контроль №5 сдан с пересдач.
+Контроль №5 сдан с пересдач. Практика: `practice/02-02/` — **по желанию** (закрепление).
 
 Закрыто:
 - `int` / `double` / `num`;
@@ -114,26 +122,26 @@
 |---|---|---|
 | 0 | Диагностика | done |
 | 1 | CS foundation: CPU/RAM/stack/heap/references | done |
-| 2 | Dart Core | in_progress |
-| 3 | Algorithms I + Big O | todo |
-| 4 | Data Structures | todo |
-| 5 | Dart Advanced: async, Future, Stream, event loop, isolates | todo |
-| 6 | Flutter Core: Widget/Element/RenderObject, layout, lifecycle, keys | todo |
-| 7 | UI Engineering | todo |
-| 8 | State Management | todo |
-| 9 | Data Layer: API, persistence, cache, offline | todo |
-| 10 | Architecture / DI / feature design | todo |
-| 11 | Testing / debugging / quality | todo |
-| 12 | Performance / DevTools | todo |
-| 13 | Mobile platform / permissions / deep links / push | todo |
-| 14 | Production / flavors / CI/CD / release | todo |
-| 15 | Middle capstone project | todo |
+| 2 | Dart Core | in_progress (учебник full) |
+| 3 | Algorithms I + Big O | skeleton |
+| 4 | Data Structures | skeleton |
+| 5 | Dart Advanced: async, Future, Stream, event loop, isolates | skeleton |
+| 6 | Flutter Core: Widget/Element/RenderObject, layout, lifecycle, keys | skeleton |
+| 7 | UI Engineering | skeleton |
+| 8 | State Management | skeleton |
+| 9 | Data Layer: API, persistence, cache, offline | skeleton |
+| 10 | Architecture / DI / feature design | skeleton |
+| 11 | Testing / debugging / quality | skeleton |
+| 12 | Performance / DevTools | skeleton |
+| 13 | Mobile platform / permissions / deep links / push | skeleton |
+| 14 | Production / flavors / CI/CD / release | skeleton |
+| 15 | Middle capstone project | skeleton |
 
 ## Правила прохождения
 
-- Фундаментальные темы: проходной балл 100%.
+- Фундаментальные темы: проходной балл 100% на контроле + сданная практика (если есть).
 - Остальные проверки: ориентир 90%+, но пробелы всё равно закрываются пересдачей.
-- На 🔴 задачах нельзя использовать AI для получения ответа.
+- На 🔴 задачах нельзя использовать AI для получения ответа / решения практики.
 - Ошибка → объяснение механизма → короткая пересдача → только затем следующий блок.
 - Старые темы должны периодически появляться в новых задачах.
 
@@ -151,6 +159,7 @@
 Лучший вариант — загрузить сюда:
 - `flutter-course/PROGRESS.md`;
 - файл текущего урока;
-- при необходимости файл с решением/кодом.
+- файлы практики с решением;
+- при необходимости файл с ответами на контроль.
 
 Можно также прислать ZIP репозитория, но `.git/` для продолжения урока не нужен.

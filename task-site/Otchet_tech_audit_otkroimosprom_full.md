@@ -156,6 +156,8 @@
 **Где:** `/personal/loyalty/`  
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
 
+![Лояльность — подписи баллов клипятся соседней плашкой](screens/loyalty-balance-text-clipped.png)
+
 ---
 
 ### На 768px вкладка «Мой баланс» смещена относительно рамки контента
@@ -210,6 +212,8 @@
 
 **Где:** `/personal/`  
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
+
+![«Редактировать» наезжает на Email / телефон](screens/personal-edit-overlaps-email.png)
 
 ---
 
@@ -278,6 +282,10 @@ scrollWidth больше окна (например ~1152–1153 > 1024).
 **Где:** шапка на всех страницах (в т.ч. `/about/`, `/space/`).  
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
 
+![1024px — «ПРОФИЛЬ» обрезана, «СМОТРЕТЬ ВСЕ» ломается](screens/1024-home-profile-cut-smotret-vse.png)
+
+![1024px — «ВОЙТИ» обрезана, стрелки наезжают на заголовок](screens/1024-home-voiti-smotret-arrows.png)
+
 ---
 
 ### На 1024px шапка уже окна
@@ -296,6 +304,10 @@ scrollWidth больше окна (например ~1152–1153 > 1024).
 **Где:** `/about/`  
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
 
+![/about/ — шапка впритык, «ПРОФИЛЬ» у края](screens/about-header-cramped.png)
+
+![/about/ ~1196px — контент прижат вправо](screens/1196-about-page.png)
+
 ---
 
 ### На 1024px кнопки «Редактировать» и «Настройки» не помещаются и выезжают за границы карточки
@@ -304,6 +316,8 @@ scrollWidth больше окна (например ~1152–1153 > 1024).
 
 **Где:** `/personal/`  
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
+
+![~1023px — «Редактировать» / «Настройки» обрезаны](screens/1023-personal-buttons-clipped.png)
 
 ---
 
@@ -323,6 +337,10 @@ scrollWidth больше окна (например ~1152–1153 > 1024).
 **Где:** `/`  
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
 
+![1024 / ~1130 — пустая зона, «СМОТРЕТЬ ВСЕ» в пустоте](screens/home-empty-zone-smotret-vse.png)
+
+![1130px — «ВОЙТИ» обрезана, стрелки поверх «МЕСЯЦЕ»](screens/1130-home-voiti-arrows-overlap.png)
+
 ---
 
 ### На 1024px текст не помещается в кнопки («СМОТРЕТЬ ВСЕ» и др.)
@@ -331,6 +349,8 @@ scrollWidth больше окна (например ~1152–1153 > 1024).
 
 **Где:** `/`  
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
+
+![«СМОТРЕТЬ ВСЕ» — перенос «ВСЕ» на рамку](screens/1024-home-profile-cut-smotret-vse.png)
 
 ---
 
@@ -367,6 +387,8 @@ scrollWidth больше окна (например ~1152–1153 > 1024).
 
 **Где:** `/policy/`  
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
+
+![Overflow текста (скрин с `/rules/`, тот же паттерн `.container`)](screens/rules-text-overflow.png)
 
 ---
 
@@ -555,6 +577,10 @@ scrollWidth больше окна (например ~1152–1153 > 1024).
 
 Второй ряд логотипа/меню поверх.
 
+![Призрак шапки — ЛК](screens/ghost-header-personal.png)
+
+![Призрак / наложение шапки — раздел для админов](screens/ghost-header-admin.png)
+
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
 
 ---
@@ -565,6 +591,14 @@ scrollWidth больше окна (например ~1152–1153 > 1024).
 
 **Где:** `/projects/`  
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
+
+![«ПРОЕКТЫ» — шестерёнки наезжают на заголовок; «ПРОФИЛЬ» клипится у поиска](screens/projects-search-profile-cut.png)
+
+![~1119px /projects/ — заголовок перекрыт, карточки в сетке](screens/1119-projects-overflow.png)
+
+![~1126px /projects/ — карточки / контент клипится](screens/1126-projects-cards-clipped.png)
+
+![Календарь / сетка проектов](screens/projects-calendar-layout.png)
 
 ---
 
@@ -581,6 +615,8 @@ scrollWidth больше окна (например ~1152–1153 > 1024).
 
 **Где:** `/`  
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
+
+![Стрелки поверх «МЕСЯЦЕ» + обрезанная «ВОЙТИ»](screens/1024-home-voiti-smotret-arrows.png)
 
 ---
 
@@ -633,6 +669,8 @@ scrollWidth больше окна (например ~1152–1153 > 1024).
 **Где:** `/policy/`  
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
 
+![Аналогичный overflow текста на `/rules/` (тот же паттерн контейнера)](screens/rules-text-overflow.png)
+
 ---
 
 ## Кривые списки на /rules
@@ -641,6 +679,8 @@ scrollWidth больше окна (например ~1152–1153 > 1024).
 
 **Где:** `/rules/`  
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
+
+![/rules/ — текст уезжает к правому краю](screens/rules-text-overflow.png)
 
 ---
 
@@ -651,6 +691,8 @@ scrollWidth больше окна (например ~1152–1153 > 1024).
 **Где:** ЛК, лояльность, квизы.  
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
 
+![Плашки баланса ломают подписи](screens/loyalty-balance-text-clipped.png)
+
 ---
 
 ## Карточки навигатора / проектов / календаря разной высоты
@@ -659,6 +701,8 @@ scrollWidth больше окна (например ~1152–1153 > 1024).
 
 **Где:** `/events/`, `/projects/`  
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
+
+![/events/ — неровная сетка / наложение карточек](screens/events-cards-uneven-overlap.png)
 
 ---
 
@@ -928,6 +972,10 @@ Javascript/datepicker не работает; остальное в профил�
 
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
 
+![iPhone 12 Pro — модалка квиза, заголовок у крестика](screens/quiz-modal-iphone-title-cut.png)
+
+![Мобильная модалка квиза](screens/quiz-modal-mobile.png)
+
 ---
 
 ## Оверлей квиза не перекрывает шапку; фон остаётся кликабельным
@@ -941,6 +989,8 @@ Javascript/datepicker не работает; остальное в профил�
 ## В модалке квиза варианты ответа плохо доступны; «Ответить» disabled с плохим контрастом
 
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
+
+![Кнопка в модалке квиза обрезана / плохо читается](screens/quiz-modal-button-cut.png)
 
 ---
 
@@ -1042,6 +1092,8 @@ Javascript/datepicker не работает; остальное в профил�
 **Где:** блок «Оставить отзыв» на `/enterprise/*`  
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
 
+![Форма отзыва на карточке предприятия](screens/enterprise-review-form.png)
+
 ---
 
 ## Hero-фото на карточке предприятия вылезает за край блока / не совпадает со скруглением
@@ -1104,6 +1156,10 @@ Javascript/datepicker не работает; остальное в профил�
 
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
 
+![Мобильный ЛК — меню / иконки](screens/mobile-lk-menu.png)
+
+![~536px — профиль в мобильной вёрстке](screens/536-personal-mobile.png)
+
 ---
 
 ## Плохой контраст белого текста на зелёных кнопках
@@ -1135,6 +1191,8 @@ Javascript/datepicker не работает; остальное в профил�
 **Где:** `/personal/loyalty/`  
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
 
+![Карточки мерча / обмен — сетка и цены](screens/loyalty-merch-cards-cut.png)
+
 ---
 
 ## Названия мерча ломаются mid-word («Термокружк» / «а»)
@@ -1160,6 +1218,8 @@ Javascript/datepicker не работает; остальное в профил�
 **Где:** `/news/`  
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
 
+![Новости — сетка текст/фото](screens/news-cards-layout.png)
+
 ---
 
 ## На новостях много пустого пространства между текстом и фото
@@ -1176,6 +1236,8 @@ Javascript/datepicker не работает; остальное в профил�
 **Где:** `/personal/loyalty/`  
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
 
+![Каталог мерча — карточки у края](screens/loyalty-merch-cards-cut.png)
+
 ---
 
 ## На экране результата квиза индикаторы 1–9 без прогресса и с низким контрастом
@@ -1184,6 +1246,8 @@ Javascript/datepicker не работает; остальное в профил�
 
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
 
+![Результат квиза — индикаторы 1–9](screens/quiz-result-indicators.png)
+
 ---
 
 ## Модалка квиза наезжает на заголовок «Личный кабинет»
@@ -1191,6 +1255,8 @@ Javascript/datepicker не работает; остальное в профил�
 Грязное наложение с фоном страницы.
 
 **повторяется в:** Google Chrome, Safari, Яндекс.Браузер, Mozilla Firefox, Opera, Microsoft Edge
+
+![1024px — оверлей квиза / наложение на шапку ЛК](screens/1024-personal-quiz-header-overlap.png)
 
 ---
 
